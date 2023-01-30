@@ -1,20 +1,401 @@
-<html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title>[% title %]</title>
-	<meta name="description" content="Clear periodic table of chemical elements. Available in English, French, German, Spanish, Polish, Czech and Slovak." /> 
-	<meta name="keywords" content="Periodic Table, Chemie, chemistry, tabulka" /> 
-[% IF location %]
-	<script type="text/javascript" src="/redir.js"></script>
-[% END %]
-[% INCLUDE favicon.html %]
-	<link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Periodic Table</title>
+	<meta name="description" content="Periodic Table" />
+	<meta name="keywords" content="Periodic Table" />
+	<link rel="stylesheet" type="text/css" href="css/pt.css" media="all" />
+	<link rel="alternate" hreflang="" href="https://pt.kle.cz/en_US/index.html" />
+	<link rel="alternate" hreflang="en" href="https://pt.kle.cz/en_US/index.html" />
+	<link rel="alternate" hreflang="de" href="https://pt.kle.cz/de_DE/index.html" />
+	<link rel="alternate" hreflang="fr" href="https://pt.kle.cz/fr_FR/index.html" />
+	<link rel="alternate" hreflang="cs" href="https://pt.kle.cz/cs_CZ/index.html" />
+	<link rel="alternate" hreflang="sk" href="https://pt.kle.cz/sk_SK/index.html" />
+	<link rel="alternate" hreflang="pl" href="https://pt.kle.cz/pl_PL/index.html" />
+	<link rel="alternate" hreflang="es" href="https://pt.kle.cz/es_ES/index.html" />
+	<link rel="alternate" hreflang="nl" href="https://pt.kle.cz/nl_NL/index.html" />
+	<link rel="alternate" hreflang="ru" href="https://pt.kle.cz/ru_RU/index.html" />
+	<link rel="alternate" hreflang="et" href="https://pt.kle.cz/et_EE/index.html" />
+	<link rel="alternate" hreflang="sv" href="https://pt.kle.cz/sv_SE/index.html" />
+	<link rel="alternate" hreflang="pt" href="https://pt.kle.cz/pt_BR/index.html" />
+	<link rel="alternate" hreflang="it" href="https://pt.kle.cz/it_IT/index.html" />
+	<link rel="alternate" hreflang="da" href="https://pt.kle.cz/da_DK/index.html" />
+	<link rel="alternate" hreflang="hu" href="https://pt.kle.cz/hu_HU/index.html" />
+	<link rel="alternate" hreflang="be" href="https://pt.kle.cz/be_BY/index.html" />
+	<link rel="alternate" hreflang="hr" href="https://pt.kle.cz/hr_HR/index.html" />
+	<link rel="alternate" hreflang="tr" href="https://pt.kle.cz/tr_TR/index.html" />
+	<link rel="alternate" hreflang="fi" href="https://pt.kle.cz/fi_FI/index.html" />
+	<link rel="alternate" hreflang="ms" href="https://pt.kle.cz/ms_MY/index.html" />
+	<link rel="alternate" hreflang="id" href="https://pt.kle.cz/id_ID/index.html" />
+	<link rel="alternate" hreflang="af" href="https://pt.kle.cz/af_ZA/index.html" />
+	<link rel="alternate" hreflang="uk" href="https://pt.kle.cz/uk_UA/index.html" />
+	<link rel="alternate" hreflang="ja" href="https://pt.kle.cz/ja_JP/index.html" />
+	<link rel="alternate" hreflang="zh" href="https://pt.kle.cz/zh_CN/index.html" />
+	<link rel="alternate" hreflang="ro" href="https://pt.kle.cz/ro_RO/index.html" />
+	<link rel="alternate" hreflang="hi" href="https://pt.kle.cz/hi_HI/index.html" />
+	<link rel="alternate" hreflang="si" href="https://pt.kle.cz/si_SI/index.html" />
+	<link rel="alternate" hreflang="vi" href="https://pt.kle.cz/vi_VN/index.html" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+	<link rel="image_src" href="img/periodic-table.png" />
+	<link rel="previewimage" href="img/periodic-table.png" />
+	<link rel="fluid-icon" href="img/periodic-table.png" title="Periodic Table" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="msapplication-TileImage" content="/pt.png" />
+	<meta name="msapplication-TileColor" content="#ffbb33" />
+	<meta name="theme-color" content="#ffbb33">
+	<meta property="og:image" content="https://pt.kle.cz/periodic-table.png" />
+	<meta property="og:title" content="Periodic Table" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://pt.kle.cz/en_US/index.html" />
+	<meta property="og:description" content="Periodic Table" />
+	<link rel="manifest" href="/en_US/manifest.json">
+	<style>
+		.sym{
+			font-size: 16px;
+            margin-left: -4em;
+			margin-top:-10px;
+		}
+		.word{
+			margin-left:-40px;
+			font-size: 10px;
+			margin-bottom:-13px;
+		}
+		.text{
+			font-size: 10px;
+			margin-top: -16px;
+			margin-right: -40px;
+		}
+	</style>
 </head>
-<body>
-	<ul itemscope itemtype="http://schema.org/Breadcrumb">
-[% FOREACH loc IN languages -%]
-<li><a href="[% IF location %][% location %]/[% END %][% loc.locales %]/index.html" title="[% loc.fullnameloc %]" itemprop="url"><span itemprop="title">[% loc.title %]</span></a></li>
-[% END -%]
+
+<body itemscope itemtype="http://schema.org/Breadcrumb">
+	<table class="maxwidth" cellspacing="0" cellpadding="0" border="0">
+		<tr class="mtitle">
+			<td colspan="18">
+				<table id="header" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td id="title"><a href="index.html" itemprop="url" title="Periodic Table">
+								<h1 itemprop="title">Periodic Table of DevSecOps Tool</h1>
+							</a></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th><a href="" title="I.A">1</a></th>
+			<th><a href="" title="II.A">2</a></th>
+			<th><a href="" title="III.B">3</a></th>
+			<th><a href="" title="IV.B">4</a></th>
+			<th><a href="" title="V.B">5</a></th>
+			<th><a href="" title="VI.B">6</a></th>
+			<th><a href="" title="VII.B">7</a></th>
+			<th><a href="" title="VII.B">8</a></th>
+			<th><a href="" title="VII.B">9</a></th>
+			<th><a href="" title="VII.B">10</a></th>
+			<th><a href="" title="I.B">11</a></th>
+			<th><a href="" title="II.B">12</a></th>
+			<th><a href="" title="III.A">13</a></th>
+			<th><a href="" title="IV.A">14</a></th>
+			<th><a href="" title="V.A">15</a></th>
+			<th><a href="" title="VI.A">16</a></th>
+			<th><a href="" title="VII.A">17</a></th>
+			<th><a href="" title="VIII.A">18</a></th>
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="nonmetals" name="H" id="H" title="Hydrogen"><div class="sym">1</div><div class="text">free</div> J<div class="word">Jenkins</div></a></td>
+			<td>&nbsp;</td>
+			<td colspan="10" rowspan="3" id="catpanel">
+				<p>
+				<table cellspacing="0" cellpadding="0" border="0">
+					<tr class="stableview">
+						<td><a href="" class="alkali-metals" title="Alkali metals">Dynamic Testing</a>
+						</td>
+						<td><a href="" class="alkaline-earth-metals"
+								title="Alkaline earth metals">Static Testing</a></td>
+					</tr>
+					<tr class="stableview">
+						<td><a href="" class="halogens" title="Halogens">Code Review</a></td>
+						<td><a href="" class="nonmetals" title="Nonmetals">Dependencies</a></td>
+					</tr>
+					<tr class="stableview">
+						<td><a href="" class="metals" title="Metals">Runtime Protection</a></td>
+						<td><a href="" class="metalloids" title="Metalloids">[Other kind]</a></td>
+						
+					</tr>
+					<tr class="stableview">
+						<td><a href="" class="transition-elements" title="Metals">Infrastructure as Code</a></td>
+						<td><a href="" class="noble-gases" title="Metalloids">Container Security</a></td>
+						
+					</tr>
+					<tr class="stableview">
+						<td><a href="" class="inner-transition-elements" title="Metals">Secrets Management</a></td>
+						<td><a href="" class="metalloids" title="Metalloids">Vulnerability Management</a></td>
+						
+					</tr>
+				</table>
+				</p>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<!-- <td><a href="helium.html" class="noble-gases" name="He" id="He" title="Helium">He<sub>2</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="Li" id="Li" title="Lithium"><div class="sym">2</div><div class="text">free</div> Za<div class="word">ZAP</div></a></td>
+			<td><a href="" class="alkaline-earth-metals" name="Be" id="Be"
+					title="Beryllium"><div class="sym">3</div><div class="text">$$$</div> Cx<div class="word">CxSAST</div></a></td>
+			<!-- <td><a href="boron.html" class="metalloids" name="B" id="B" title="Boron">B<sub>5</sub></a></td>
+			<td><a href="carbon.html" class="nonmetals" name="C" id="C" title="Carbon">C<sub>6</sub></a></td>
+			<td><a href="nitrogen.html" class="nonmetals" name="N" id="N" title="Nitrogen">N<sub>7</sub></a></td>
+			<td><a href="oxygen.html" class="nonmetals" name="O" id="O" title="Oxygen">O<sub>8</sub></a></td>
+			<td><a href="fluorine.html" class="halogens" name="F" id="F" title="Fluorine">F<sub>9</sub></a></td>
+			<td><a href="neon.html" class="noble-gases" name="Ne" id="Ne" title="Neon">Ne<sub>10</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="Na" id="Na" title="Sodium"><div class="sym">11</div><div class="text">$$</div>Ac<div class="word">Acunetix</div></a></td>
+			<td><a href="" class="alkaline-earth-metals" name="Mg" id="Mg"
+					title="Magnesium"><div class="sym">51</div><div class="text">free</div>Pg<div class="word">ProGaurd</div></td>
+			<!-- <td><a href="aluminum.html" class="metals" name="Al" id="Al" title="Aluminum">Al<sub>13</sub></a></td>
+			<td><a href="silicon.html" class="metalloids" name="Si" id="Si" title="Silicon">Si<sub>14</sub></a></td>
+			<td><a href="phosphorus.html" class="nonmetals" name="P" id="P" title="Phosphorus">P<sub>15</sub></a></td>
+			<td><a href="sulfur.html" class="nonmetals" name="S" id="S" title="Sulfur">S<sub>16</sub></a></td>
+			<td><a href="chlorine.html" class="halogens" name="Cl" id="Cl" title="Chlorine">Cl<sub>17</sub></a></td>
+			<td><a href="argon.html" class="noble-gases" name="Ar" id="Ar" title="Argon">Ar<sub>18</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="K" id="K" title="Potassium"><div class="sym">21</div><div class="text">$$$</div>Vc<div class="word">VeraCode</div></a></td>
+			<td><a href="" class="alkaline-earth-metals" name="Ca" id="Ca"
+					title="Calcium"><div class="sym">22</div><div class="text">$$$</div>Vs<div class="word">VeraCode</div></a></td>
+			<!-- <td><a href="scandium.html" class="transition-elements" name="Sc" id="Sc"
+					title="Scandium">Sc<sub>21</sub></a></td>
+			<td><a href="titanium.html" class="transition-elements" name="Ti" id="Ti"
+					title="Titanium">Ti<sub>22</sub></a></td>
+			<td><a href="vanadium.html" class="transition-elements" name="V" id="V" title="Vanadium">V<sub>23</sub></a>
+			</td>
+			<td><a href="chromium.html" class="transition-elements" name="Cr" id="Cr"
+					title="Chromium">Cr<sub>24</sub></a></td>
+			<td><a href="manganese.html" class="transition-elements" name="Mn" id="Mn"
+					title="Manganese">Mn<sub>25</sub></a></td>
+			<td><a href="iron.html" class="transition-elements" name="Fe" id="Fe" title="Iron">Fe<sub>26</sub></a></td>
+			<td><a href="cobalt.html" class="transition-elements" name="Co" id="Co" title="Cobalt">Co<sub>27</sub></a>
+			</td>
+			<td><a href="nickel.html" class="transition-elements" name="Ni" id="Ni" title="Nickel">Ni<sub>28</sub></a>
+			</td>
+			<td><a href="copper.html" class="transition-elements" name="Cu" id="Cu" title="Copper">Cu<sub>29</sub></a>
+			</td>
+			<td><a href="zinc.html" class="transition-elements" name="Zn" id="Zn" title="Zinc">Zn<sub>30</sub></a></td>
+			<td><a href="gallium.html" class="metals" name="Ga" id="Ga" title="Gallium">Ga<sub>31</sub></a></td>
+			<td><a href="germanium.html" class="metalloids" name="Ge" id="Ge" title="Germanium">Ge<sub>32</sub></a></td>
+			<td><a href="arsenic.html" class="metalloids" name="As" id="As" title="Arsenic">As<sub>33</sub></a></td>
+			<td><a href="selenium.html" class="nonmetals" name="Se" id="Se" title="Selenium">Se<sub>34</sub></a></td>
+			<td><a href="bromine.html" class="halogens" name="Br" id="Br" title="Bromine">Br<sub>35</sub></a></td>
+			<td><a href="krypton.html" class="noble-gases" name="Kr" id="Kr" title="Krypton">Kr<sub>36</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="Rb" id="Rb" title="Rubidium"><div class="sym">31</div><div class="text">$$$$</div>Wi<div class="word">WebInspect</div></a>
+			</td>
+			<td><a href="" class="alkaline-earth-metals" name="Sr" id="Sr"
+					title="Strontium"><div class="sym">32</div><div class="text">$$$$</div>Fy<div class="word">Fortify SCA</div></a></td>
+			<!-- <td><a href="yttrium.html" class="transition-elements" name="Y" id="Y" title="Yttrium">Y<sub>39</sub></a>
+			</td>
+			<td><a href="zirconium.html" class="transition-elements" name="Zr" id="Zr"
+					title="Zirconium">Zr<sub>40</sub></a></td>
+			<td><a href="niobium.html" class="transition-elements" name="Nb" id="Nb" title="Niobium">Nb<sub>41</sub></a>
+			</td>
+			<td><a href="molybdenum.html" class="transition-elements" name="Mo" id="Mo"
+					title="Molybdenum">Mo<sub>42</sub></a></td>
+			<td><a href="technetium.html" class="transition-elements" name="Tc" id="Tc"
+					title="Technetium">Tc<sub>43</sub></a></td>
+			<td><a href="ruthenium.html" class="transition-elements" name="Ru" id="Ru"
+					title="Ruthenium">Ru<sub>44</sub></a></td>
+			<td><a href="rhodium.html" class="transition-elements" name="Rh" id="Rh" title="Rhodium">Rh<sub>45</sub></a>
+			</td>
+			<td><a href="palladium.html" class="transition-elements" name="Pd" id="Pd"
+					title="Palladium">Pd<sub>46</sub></a></td>
+			<td><a href="silver.html" class="transition-elements" name="Ag" id="Ag" title="Silver">Ag<sub>47</sub></a>
+			</td>
+			<td><a href="cadmium.html" class="transition-elements" name="Cd" id="Cd" title="Cadmium">Cd<sub>48</sub></a>
+			</td>
+			<td><a href="indium.html" class="metals" name="In" id="In" title="Indium">In<sub>49</sub></a></td>
+			<td><a href="tin.html" class="metals" name="Sn" id="Sn" title="Tin">Sn<sub>50</sub></a></td>
+			<td><a href="antimony.html" class="metalloids" name="Sb" id="Sb" title="Antimony">Sb<sub>51</sub></a></td>
+			<td><a href="tellurium.html" class="metalloids" name="Te" id="Te" title="Tellurium">Te<sub>52</sub></a></td>
+			<td><a href="iodine.html" class="halogens" name="I" id="I" title="Iodine">I<sub>53</sub></a></td>
+			<td><a href="xenon.html" class="noble-gases" name="Xe" id="Xe" title="Xenon">Xe<sub>54</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="Cs" id="Cs" title="Cesium"><div class="sym">41</div><div class="text">$$$$</div>Ap<div class="word">AppScan</div></a></td>
+			<td><a href="" class="alkaline-earth-metals" name="Ba" id="Ba" title="Barium"><div class="sym">42</div><div class="text">$$$$</div>As<div class="word">AppScan</div></a>
+			</td>
+			<!-- <td><a href="lanthanum.html" class="transition-elements" name="La" id="La"
+					title="Lanthanum">La<sub>57</sub></a></td>
+			<td><a href="hafnium.html" class="transition-elements" name="Hf" id="Hf" title="Hafnium">Hf<sub>72</sub></a>
+			</td>
+			<td><a href="tantalum.html" class="transition-elements" name="Ta" id="Ta"
+					title="Tantalum">Ta<sub>73</sub></a></td>
+			<td><a href="tungsten.html" class="transition-elements" name="W" id="W" title="Tungsten">W<sub>74</sub></a>
+			</td>
+			<td><a href="rhenium.html" class="transition-elements" name="Re" id="Re" title="Rhenium">Re<sub>75</sub></a>
+			</td>
+			<td><a href="osmium.html" class="transition-elements" name="Os" id="Os" title="Osmium">Os<sub>76</sub></a>
+			</td>
+			<td><a href="iridium.html" class="transition-elements" name="Ir" id="Ir" title="Iridium">Ir<sub>77</sub></a>
+			</td>
+			<td><a href="platinum.html" class="transition-elements" name="Pt" id="Pt"
+					title="Platinum">Pt<sub>78</sub></a></td>
+			<td><a href="gold.html" class="transition-elements" name="Au" id="Au" title="Gold">Au<sub>79</sub></a></td>
+			<td><a href="mercury.html" class="transition-elements" name="Hg" id="Hg" title="Mercury">Hg<sub>80</sub></a>
+			</td>
+			<td><a href="thallium.html" class="metals" name="Tl" id="Tl" title="Thallium">Tl<sub>81</sub></a></td>
+			<td><a href="lead.html" class="metals" name="Pb" id="Pb" title="Lead">Pb<sub>82</sub></a></td>
+			<td><a href="bismuth.html" class="metals" name="Bi" id="Bi" title="Bismuth">Bi<sub>83</sub></a></td>
+			<td><a href="polonium.html" class="metals" name="Po" id="Po" title="Polonium">Po<sub>84</sub></a></td>
+			<td><a href="astatine.html" class="halogens" name="At" id="At" title="Astatine">At<sub>85</sub></a></td>
+			<td><a href="radon.html" class="noble-gases" name="Rn" id="Rn" title="Radon">Rn<sub>86</sub></a></td> -->
+		</tr>
+		<tr class="tableview">
+			<td><a href="" class="alkali-metals" name="Fr" id="Fr" title="Francium"><div class="sym">52</div><div class="text">$$</div>Gt<div class="word">Gauntlet</div></a>
+			</td>
+			<!-- <td><a href="radium.html" class="alkaline-earth-metals" name="Ra" id="Ra" title="Radium">Ra<sub>88</sub></a>
+			</td> -->
+			<!-- <td><a href="actinium.html" class="transition-elements" name="Ac" id="Ac"
+					title="Actinium">Ac<sub>89</sub></a></td>
+			<td><a href="rutherfordium.html" class="transition-elements" name="Rf" id="Rf"
+					title="Rutherfordium">Rf<sub>104</sub></a></td>
+			<td><a href="dubnium.html" class="transition-elements" name="Db" id="Db"
+					title="Dubnium">Db<sub>105</sub></a></td>
+			<td><a href="seaborgium.html" class="transition-elements" name="Sg" id="Sg"
+					title="Seaborgium">Sg<sub>106</sub></a></td>
+			<td><a href="bohrium.html" class="transition-elements" name="Bh" id="Bh"
+					title="Bohrium">Bh<sub>107</sub></a></td>
+			<td><a href="hassium.html" class="transition-elements" name="Hs" id="Hs"
+					title="Hassium">Hs<sub>108</sub></a></td>
+			<td><a href="meitnerium.html" class="transition-elements" name="Mt" id="Mt"
+					title="Meitnerium">Mt<sub>109</sub></a></td>
+			<td><a href="darmstadtium.html" class="transition-elements" name="Ds" id="Ds"
+					title="Darmstadtium">Ds<sub>110</sub></a></td>
+			<td><a href="roentgenium.html" class="transition-elements" name="Rg" id="Rg"
+					title="Roentgenium">Rg<sub>111</sub></a></td>
+			<td><a href="copernicium.html" class="transition-elements" name="Cn" id="Cn"
+					title="Copernicium">Cn<sub>112</sub></a></td>
+			<td><a href="nihonium.html" class="metals" name="Nh" id="Nh" title="Nihonium">Nh<sub>113</sub></a></td>
+			<td><a href="flerovium.html" class="metals" name="Fl" id="Fl" title="Flerovium">Fl<sub>114</sub></a></td>
+			<td><a href="moscovium.html" class="metals" name="Mc" id="Mc" title="Moscovium">Mc<sub>115</sub></a></td>
+			<td><a href="livermorium.html" class="metals" name="Lv" id="Lv" title="Livermorium">Lv<sub>116</sub></a>
+			</td>
+			<td><a href="tennessine.html" class="halogens" name="Ts" id="Ts" title="Tennessine">Ts<sub>117</sub></a>
+			</td>
+			<td><a href="oganesson.html" class="noble-gases" name="Og" id="Og" title="Oganesson">Og<sub>118</sub></a> -->
+			</td>
+		</tr>
+		<tr class="tableview">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr class="tableview">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<!-- <td><a href="cerium.html" class="inner-transition-elements" name="Ce" id="Ce"
+					title="Cerium">Ce<sub>58</sub></a></td>
+			<td><a href="praseodymium.html" class="inner-transition-elements" name="Pr" id="Pr"
+					title="Praseodymium">Pr<sub>59</sub></a></td>
+			<td><a href="neodymium.html" class="inner-transition-elements" name="Nd" id="Nd"
+					title="Neodymium">Nd<sub>60</sub></a></td>
+			<td><a href="promethium.html" class="inner-transition-elements" name="Pm" id="Pm"
+					title="Promethium">Pm<sub>61</sub></a></td>
+			<td><a href="samarium.html" class="inner-transition-elements" name="Sm" id="Sm"
+					title="Samarium">Sm<sub>62</sub></a></td>
+			<td><a href="europium.html" class="inner-transition-elements" name="Eu" id="Eu"
+					title="Europium">Eu<sub>63</sub></a></td>
+			<td><a href="gadolinium.html" class="inner-transition-elements" name="Gd" id="Gd"
+					title="Gadolinium">Gd<sub>64</sub></a></td>
+			<td><a href="terbium.html" class="inner-transition-elements" name="Tb" id="Tb"
+					title="Terbium">Tb<sub>65</sub></a></td>
+			<td><a href="dysprosium.html" class="inner-transition-elements" name="Dy" id="Dy"
+					title="Dysprosium">Dy<sub>66</sub></a></td>
+			<td><a href="holmium.html" class="inner-transition-elements" name="Ho" id="Ho"
+					title="Holmium">Ho<sub>67</sub></a></td>
+			<td><a href="erbium.html" class="inner-transition-elements" name="Er" id="Er"
+					title="Erbium">Er<sub>68</sub></a></td>
+			<td><a href="thulium.html" class="inner-transition-elements" name="Tm" id="Tm"
+					title="Thulium">Tm<sub>69</sub></a></td>
+			<td><a href="ytterbium.html" class="inner-transition-elements" name="Yb" id="Yb"
+					title="Ytterbium">Yb<sub>70</sub></a></td>
+			<td><a href="lutetium.html" class="inner-transition-elements" name="Lu" id="Lu"
+					title="Lutetium">Lu<sub>71</sub></a></td> -->
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr class="tableview">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<!-- <td><a href="thorium.html" class="inner-transition-elements" name="Th" id="Th"
+					title="Thorium">Th<sub>90</sub></a></td>
+			<td><a href="protactinium.html" class="inner-transition-elements" name="Pa" id="Pa"
+					title="Protactinium">Pa<sub>91</sub></a></td>
+			<td><a href="uranium.html" class="inner-transition-elements" name="U" id="U"
+					title="Uranium">U<sub>92</sub></a></td>
+			<td><a href="neptunium.html" class="inner-transition-elements" name="Np" id="Np"
+					title="Neptunium">Np<sub>93</sub></a></td>
+			<td><a href="plutonium.html" class="inner-transition-elements" name="Pu" id="Pu"
+					title="Plutonium">Pu<sub>94</sub></a></td>
+			<td><a href="americium.html" class="inner-transition-elements" name="Am" id="Am"
+					title="Americium">Am<sub>95</sub></a></td>
+			<td><a href="curium.html" class="inner-transition-elements" name="Cm" id="Cm"
+					title="Curium">Cm<sub>96</sub></a></td>
+			<td><a href="berkelium.html" class="inner-transition-elements" name="Bk" id="Bk"
+					title="Berkelium">Bk<sub>97</sub></a></td>
+			<td><a href="californium.html" class="inner-transition-elements" name="Cf" id="Cf"
+					title="Californium">Cf<sub>98</sub></a></td>
+			<td><a href="einsteinium.html" class="inner-transition-elements" name="Es" id="Es"
+					title="Einsteinium">Es<sub>99</sub></a></td>
+			<td><a href="fermium.html" class="inner-transition-elements" name="Fm" id="Fm"
+					title="Fermium">Fm<sub>100</sub></a></td>
+			<td><a href="mendelevium.html" class="inner-transition-elements" name="Md" id="Md"
+					title="Mendelevium">Md<sub>101</sub></a></td>
+			<td><a href="nobelium.html" class="inner-transition-elements" name="No" id="No"
+					title="Nobelium">No<sub>102</sub></a></td>
+			<td><a href="lawrencium.html" class="inner-transition-elements" name="Lr" id="Lr"
+					title="Lawrencium">Lr<sub>103</sub></a></td> -->
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<ul class="tbmenu undertable">
+		<li><a href="language.html" title="Language">Language</a></li>
+		<li><a href="download.html" title="Download">Download</a></li>
+		<li class="last"><a href="about.html" title="About">About</a></li>
 	</ul>
 </body>
+
 </html>
